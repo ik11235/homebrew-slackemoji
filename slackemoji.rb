@@ -4,23 +4,15 @@
 
 class Slackemoji < Formula
   desc ""
-  homepage ""
+  homepage "https://github.com/ik11235/homebrew-slackemoji"
   url "slackemoji"
   sha256 ""
+  version "0.0.1"
 
-  # depends_on "cmake" => :build
-  depends_on :x11 # if your formula requires any X11/XQuartz components
+  depends_on " readline " => :recommended
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-
-    # Remove unrecognized options if warned by configure
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    # system "cmake", ".", *std_cmake_args
-    system "make", "install" # if this fails, try separate make/make install steps
+    # bin.install
   end
 
   test do
